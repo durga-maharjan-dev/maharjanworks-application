@@ -1,7 +1,5 @@
 package maharjanworks.model;
 
-import java.util.Arrays;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,37 +11,34 @@ import javax.persistence.Table;
 public class Employee {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int employeeId;
 	private String firstName;
 	private String lastName;
 	private String email;
 	private String password;
-	private byte[] profileImage;
+
 	
 	public Employee() {
 		super();
 	}
-	
-	public Employee(String firstName, String lastName, String email, String password, byte[] profileImage) {
+
+	public Employee(String firstName, String lastName, String email, String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
-		this.profileImage = profileImage;
 	}
 
-
-	public Employee(int employeeId, String firstName, String lastName, String email, String password,
-			byte[] profileImage) {
+	public Employee(int employeeId, String firstName, String lastName, String email, String password) {
 		super();
 		this.employeeId = employeeId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
-		this.profileImage = profileImage;
+		
 	}
 
 	public int getEmployeeId() {
@@ -86,19 +81,16 @@ public class Employee {
 		this.password = password;
 	}
 
-	public byte[] getProfileImage() {
-		return profileImage;
-	}
-
-	public void setProfileImage(byte[] profileImage) {
-		this.profileImage = profileImage;
-	}
-
 	@Override
 	public String toString() {
 		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
-				+ email + ", password=" + password + ", profileImage=" + Arrays.toString(profileImage) + "]";
+				+ email + ", password=" + password + "]";
 	}
+
+	
+
+	
+	
 	
 	
 	

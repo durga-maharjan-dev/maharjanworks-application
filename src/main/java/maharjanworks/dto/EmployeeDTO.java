@@ -1,7 +1,5 @@
 package maharjanworks.dto;
 
-import java.util.Arrays;
-
 public class EmployeeDTO {
 	
 	private int employeeId;
@@ -9,30 +7,26 @@ public class EmployeeDTO {
 	private String lastName;
 	private String email;
 	private String password;
-	private byte[] profileImage;
 	
 	public EmployeeDTO() {
 		super();
 	}
 
-	public EmployeeDTO(String firstName, String lastName, String email, String password, byte[] profileImage) {
+	public EmployeeDTO(String firstName, String lastName, String email, String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
-		this.profileImage = profileImage;
 	}
 
-	public EmployeeDTO(int employeeId, String firstName, String lastName, String email, String password,
-			byte[] profileImage) {
+	public EmployeeDTO(int employeeId, String firstName, String lastName, String email, String password) {
 		super();
 		this.employeeId = employeeId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
-		this.profileImage = profileImage;
 	}
 
 	public int getEmployeeId() {
@@ -75,21 +69,12 @@ public class EmployeeDTO {
 		this.password = password;
 	}
 
-	public byte[] getProfileImage() {
-		return profileImage;
-	}
-
-	public void setProfileImage(byte[] profileImage) {
-		this.profileImage = profileImage;
-	}
-
 	@Override
 	public String toString() {
 		return "EmployeeDTO [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", email=" + email + ", password=" + password + ", profileImage=" + Arrays.toString(profileImage)
-				+ "]";
+				+ ", email=" + email + ", password=" + password + "]";
 	}
-	
+
 	
 	
 	
