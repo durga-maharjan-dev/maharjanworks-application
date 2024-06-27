@@ -1,30 +1,53 @@
 package maharjanworks.exception;
 
+import java.time.ZonedDateTime;
+
+import org.springframework.http.HttpStatus;
+
 public class ApplicationStatus {
 	
-	private String message;
-	private String webRequest;
+	private final String message;
+	private final Throwable cause;
+	private final HttpStatus httpStatus;
+	private final ZonedDateTime timestamp;
+	private final String webRquest;
 	
-	public ApplicationStatus(String message, String webRequest) {
+	public ApplicationStatus(String message, Throwable cause, HttpStatus httpStatus, ZonedDateTime timestamp, String webRequest) {
 		super();
 		this.message = message;
-		this.webRequest = webRequest;
+		this.cause = cause;
+		this.httpStatus = httpStatus;
+		this.timestamp = timestamp;
+		this.webRquest = webRequest;
 	}
 
 	public String getMessage() {
 		return message;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public Throwable getCause() {
+		return cause;
 	}
 
-	public String getWebRequest() {
-		return webRequest;
+	public HttpStatus getHttpStatus() {
+		return httpStatus;
 	}
 
-	public void setWebRequest(String webRequest) {
-		this.webRequest = webRequest;
+	public ZonedDateTime getTimestamp() {
+		return timestamp;
 	}
 
+	public String getWebRquest() {
+		return webRquest;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
