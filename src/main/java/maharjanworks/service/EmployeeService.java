@@ -1,5 +1,7 @@
 package maharjanworks.service;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 
 import maharjanworks.dto.EmployeeDTO;
@@ -10,6 +12,8 @@ public interface EmployeeService {
 
 	EmployeeDTO findByEmail(String email);
 
-	ResponseEntity<?> findById(int employeeId);
+	ResponseEntity<EmployeeDTO> findById(int employeeId);
+
+	ResponseEntity<List<EmployeeDTO>> findAll();
 
 }

@@ -53,5 +53,18 @@ public class GlobalExceptionHandler {
 				);
 		return new ResponseEntity<>(applicationStatus,httpStatus);
 	}
+	
+	@ExceptionHandler(value = {EmployeeListIsEmptyException.class})
+	public ResponseEntity<?> handleEmployeListIsEmptyException(EmployeeListIsEmptyException ex, WebRequest webRequest){
+		HttpStatus httpStatus = HttpStatus.NO_CONTENT;
+		ApplicationStatus applicationStatus = new ApplicationStatus(
+				ex.getMessage(),
+				ex.getCause(),
+				httpStatus,
+				ZonedDateTime.now(ZoneId.of("Z")),
+				webRequest.getDescription(false)
+				);
+		return new ResponseEntity<>(applicationStatus, httpStatus);
+	}
 
 }
